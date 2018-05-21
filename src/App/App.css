@@ -22,6 +22,10 @@
   font-size: large;
 }
 
+.App-main {
+  
+}
+
 @keyframes App-logo-spin {
   10%, 90% {
     transform: translate3d(-10px, 0, 0);
