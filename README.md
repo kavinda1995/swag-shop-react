@@ -1,3 +1,15 @@
+## Installation Guide
+
+- Download the project
+- Do a npm install
+- Get the mongoDB server up
+- Extract the swag-shop-api.rar file
+- Insert the queries inside the data.json to mongoDB (Inside the swag-shop-api)
+- Run node server.js (Inside the swag-shop-api)
+- Go to main project folder and run npm start
+- You are online :D
+---------------------------------------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
