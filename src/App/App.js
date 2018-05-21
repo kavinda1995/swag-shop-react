@@ -12,17 +12,32 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {products:[]};
+
     this.loadData = this.loadData.bind(this);
+    this.productList = this.productList.bind(this);
 
     this.loadData();
   }
 
   loadData = () => {
+    let self = this;
     http.getProducts().then((data) => {
-      console.log(data);
+      self.setState({products : data});
     },err => {
+      alert("Error while getting data from API. Error : ", err);
       console.log("Error", err);
     });
+  }
+
+  productList = () => {
+    const list = this.state.products.map((product) => 
+      <div className="col-sm-4" key={product._id}>
+        <Product title={product.title} price={product.price} imgUrl={product.imgUrl}/>
+      </div>
+    );
+
+    return (list);
   }
 
   render() {
@@ -32,8 +47,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Swag Shop</h1>
         </header>
-        <div className="App-main">
-          <Product/>
+        <div className="container App-main">
+          <div className="row">
+            {this.productList()}
+          </div>
         </div>
       </div>
     );

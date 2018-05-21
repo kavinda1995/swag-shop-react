@@ -1,1 +1,9 @@
- 
+.product {
+    width: 12rem;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.product img {
+    height: 12rem;
+}
